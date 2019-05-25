@@ -1,11 +1,15 @@
 
 <% if @post.errors.any? %>
-  <ul>
-    <% @post.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
+ 
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
 <% end %>
+    
 
 <%= render 'form' %>
 

@@ -10,11 +10,21 @@
   </head>
 
   <body>
+ 
+    <% flash.each do |key, value| %>
+      <div class="alerta">
+        <div class="<%= flash_class(key) %>">
+        <%= value %>
+        </div>
+    <% end %>
+      </div>
 
-    <% if user_signed_in? %>   
-      <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+
+    <% if user_signed_in? %> 
+      <%= image_tag gravatar_url(current_user.email , 64), alt: "" %>      
+      <%= link_to "Salir", destroy_user_session_path, method: :delete %>
     <% else %> 
-      <%= link_to "Sign In", new_user_session_path %>  
+      <%= link_to "Ingresar", new_user_session_path %>  
     <% end %>   
     
 

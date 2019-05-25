@@ -11,7 +11,7 @@ es:
   activerecord:
     attributes:
       post:
-        title: 'La validación falló: %{errors}'
+        title: 'Titulo'
         content: "Contenido"
       comment: 
         content: "Contenido"
